@@ -1,6 +1,6 @@
-package Models;
+package Models.Client;
 
-public class RegularPass extends Pass{
+public class RegularClient extends Client {
     @Override
     public float getDisccount() {
         return 1f;

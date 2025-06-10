@@ -1,4 +1,4 @@
-package Models;
+package Models.Pass;
 
 import Models.Interface.DisccountInterface;
 

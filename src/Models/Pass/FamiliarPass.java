@@ -1,6 +1,6 @@
-package Models;
+package Models.Pass;
 
-public class FamiliarPass extends Pass{
+public class FamiliarPass extends Pass {
 
     @Override
     public float getDisccount() {

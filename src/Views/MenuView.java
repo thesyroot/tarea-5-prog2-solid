@@ -15,6 +15,7 @@ public class MenuView {
     public void showMenu(){
         this.menuShower.show("-------------------------------------------\n" +
                 "1. Listar los diferentes pases para elegir.\n" +
+                "2. Listar los diferentes clientes.\n" +
                 "-------------------------------------------\n");
     }
 

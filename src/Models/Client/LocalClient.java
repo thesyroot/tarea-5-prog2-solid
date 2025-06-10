@@ -1,6 +1,4 @@
-package Models;
-
-import java.lang.ref.Cleaner;
+package Models.Client;
 
 public class LocalClient extends Client {
     @Override

@@ -1,4 +1,4 @@
-package Models;
+package Models.Client;
 
 import Models.Interface.DisccountInterface;
 

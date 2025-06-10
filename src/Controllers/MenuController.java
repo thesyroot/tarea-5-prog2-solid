@@ -1,5 +1,6 @@
 package Controllers;
 
+import Controllers.Commands.GenericCommand;
 import Views.MenuView;
 
 public class MenuController {
@@ -10,5 +11,20 @@ public class MenuController {
         this.menuView = menuView;
 
         this.coreController = new CoreController();
+    }
+
+    public void begin() {
+        int option = -1;
+        while(option != 0){
+            this.menuView.showMenu();
+            option = this.menuView.nextOption();
+
+            this.coreController.getCommands().getOrDefault(option, new GenericCommand(null) {
+                @Override
+                public void execute() {
+                    System.exit(0);
+                }
+            }).execute();
+        }
     }
 }

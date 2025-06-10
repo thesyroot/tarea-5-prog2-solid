@@ -1,5 +1,7 @@
 package Models;
 
+import Models.Client.Client;
+import Models.Pass.Pass;
 import lombok.Data;
 
 @Data
