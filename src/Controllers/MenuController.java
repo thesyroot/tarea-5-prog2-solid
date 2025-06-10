@@ -16,15 +16,16 @@ public class MenuController {
     public void begin() {
         int option = -1;
         while(option != 0){
-            this.menuView.showMenu();
+            this.menuView.showMenu(this.coreController.getCommands());
             option = this.menuView.nextOption();
 
-            this.coreController.getCommands().getOrDefault(option, new GenericCommand(null) {
-                @Override
-                public void execute() {
-                    System.exit(0);
-                }
-            }).execute();
+            this.coreController.getCommands().getOrDefault(option,
+                    new GenericCommand(null, "Salir") {
+                        @Override
+                        public void execute() {
+                            System.exit(0);
+                        }
+                    }).execute();
         }
     }
 }

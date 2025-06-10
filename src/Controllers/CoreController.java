@@ -1,11 +1,12 @@
 package Controllers;
 
 import Controllers.Commands.GenericCommand;
+import Controllers.Commands.RegisterEntrada;
 import Controllers.Commands.ShowDiffClients;
 import Controllers.Commands.ShowDiffPass;
-import Controllers.ModelControllers.ClientController;
+import Controllers.ModelControllers.ClientTypeController;
 import Controllers.ModelControllers.GenericModelController;
-import Controllers.ModelControllers.PassController;
+import Controllers.ModelControllers.PassTypeController;
 import Views.ClientView;
 import Views.PassView;
 import lombok.Getter;
@@ -21,10 +22,11 @@ public class CoreController {
     public CoreController() {
         this.commands = new HashMap<>();
 
-        this.clientController = new ClientController(new ClientView());
-        this.passController = new PassController(new PassView());
+        this.clientController = new ClientTypeController(new ClientView());
+        this.passController = new PassTypeController(new PassView());
 
         this.commands.put(1, new ShowDiffPass(this.passController));
         this.commands.put(2, new ShowDiffClients(this.clientController));
+        this.commands.put(3, new RegisterEntrada(null));
     }
 }

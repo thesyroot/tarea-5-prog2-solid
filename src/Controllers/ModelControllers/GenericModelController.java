@@ -1,5 +1,6 @@
 package Controllers.ModelControllers;
 
 public interface GenericModelController {
-    public void showListOfTypes();
+    public void add();
+    public void show();
 }

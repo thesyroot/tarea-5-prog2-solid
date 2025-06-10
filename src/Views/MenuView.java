@@ -1,7 +1,11 @@
 package Views;
 
+import Controllers.Commands.GenericCommand;
 import Views.Asker.GenericAsker;
 import Views.Shower.GenericShower;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MenuView {
     private final GenericAsker menuAsker;
@@ -12,11 +16,10 @@ public class MenuView {
         this.menuAsker = new GenericAsker();
     }
 
-    public void showMenu(){
-        this.menuShower.show("-------------------------------------------\n" +
-                "1. Listar los diferentes pases para elegir.\n" +
-                "2. Listar los diferentes clientes.\n" +
-                "-------------------------------------------\n");
+    public void showMenu(HashMap<Integer, GenericCommand> commands){
+        this.menuShower.show("-------------------------------------------");
+        commands.forEach((pos, cmd) -> this.menuShower.show(pos+". "+cmd.getOption()+"."));
+        this.menuShower.show("-------------------------------------------");
     }
 
     public int nextOption(){

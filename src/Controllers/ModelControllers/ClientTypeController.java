@@ -1,6 +1,5 @@
 package Controllers.ModelControllers;
 
-import Controllers.Commands.GenericCommand;
 import Models.Client.Client;
 import Models.Client.LocalClient;
 import Models.Client.RegularClient;
@@ -10,11 +9,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ClientController implements GenericModelController {
+public class ClientTypeController implements GenericModelController {
     private final Set<Client> clientTypes;
     private final ClientView clientView;
 
-    public ClientController(ClientView clientView) {
+    public ClientTypeController(ClientView clientView) {
         this.clientView = clientView;
 
         this.clientTypes = new HashSet<Client>();
@@ -24,7 +23,12 @@ public class ClientController implements GenericModelController {
     }
 
     @Override
-    public void showListOfTypes() {
+    public void add() {
+
+    }
+
+    @Override
+    public void show() {
         this.clientView.showTypes(clientTypes.stream()
                 .collect(ArrayList::new, (l, cli) -> l.add(cli.getClass().getSimpleName()), ArrayList::addAll));
     }
